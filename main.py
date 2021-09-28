@@ -1,9 +1,20 @@
 from cefpython3 import cefpython as cef
-import platform
-import sys
+import platform, sys, json, os, subprocess
+import urllib.request
+import threading
 
+def downloadworker(value):
+    if value == "installGeforceNow":
+        print('Warning: If this file is blocked, ask for an update.')
+        url = 'https://download.nvidia.com/gfnpc/GeForceNOW-release.exe'
+        urllib.request.urlretrieve(url, 'GeForceNOWinstaller.exe')
+        subprocess.call("GeForceNOWinstaller.exe")
 
 g_htmlcode = open("neonium.html", "r").read()
+
+with open("apps.json", "r") as f:
+    apps = json.load(f)
+    f.close()
 
 def main():
     check_versions()
@@ -18,7 +29,10 @@ def main():
     cef.Shutdown()
 
 def recieveData(value):
-    print("Value sent from Javascript: "+value)
+    t = threading.Thread(target=downloadworker, args=[value])
+    t.start()
+        
+
 
 def check_versions():
     ver = cef.GetVersion()
