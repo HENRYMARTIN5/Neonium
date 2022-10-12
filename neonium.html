@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="Installport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
 
     
@@ -26,6 +26,25 @@
           font-size: 3.5rem;
         }
       }
+
+      .img {
+        display: block;
+        height: 225px;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+      }
+
+      .img img {
+        height: auto;
+        left: 50%;
+        min-height: 100%;
+        min-width: 100%;
+        position: absolute;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: auto;
+      }
     </style>
 
     
@@ -38,7 +57,8 @@
       <div class="row">
         <div class="col-sm-8 col-md-7 py-4">
           <h4 class="text-white">Neonium</h4>
-          <p class="text-muted">Stuff goes here</p>
+          <p class="text-muted">Install anything, anywhere.</p>
+          <button type="button" class="btn btn-sm btn-outline-secondary" onclick = "sendData('cmd')">Open CMD</button>
         </div>
       </div>
     </div>
@@ -74,6 +94,7 @@
           <div class="card shadow-sm">
             <img src="https://www.xda-developers.com/files/2020/02/nvidia-geforce-now.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225"></img>
 
+
             <div class="card-body">
               <p class="card-text">GeForce NOW instantly transforms nearly any laptop, desktop, Mac, SHIELD TV, Android device, iPhone, or iPad into the PC gaming rig you've always dreamed of.</p>
               <div class="d-flex justify-content-between align-items-center">
@@ -88,13 +109,13 @@
         </div>
         <div class="col">
           <div class="card shadow-sm">
-            <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+            <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmfery.com%2Fassets%2Fimg%2Fposts%2Fvscode-banner.png&f=1&nofb=1&ipt=f145fcd2b19a808d1ba6c3ecf7ba4fa46771d9395baaf6c45dcab5b2baa5f7fe&ipo=images" class="bd-placeholder-img card-img-top" width="100%" height="225"></img>
 
             <div class="card-body">
-              <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+              <p class="card-text">Visual Studio Code is a code editor redefined and optimized for building and debugging modern web and cloud applications.</p>
               <div class="d-flex justify-content-between align-items-center">
                 <div class="btn-group">
-                  <button type="button" class="btn btn-sm btn-outline-secondary">Install</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" onclick = "sendData('installVscode')">Install</button>
                   
                 </div>
                 

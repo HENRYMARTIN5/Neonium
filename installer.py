@@ -1,10 +1,3 @@
-# Neonium
-App installer for schools/offices without admin permissions.
-
-### Installation
-Run the following python in whatever way you can:
-
-```py
 import sys
 from os import system as cmd, path
 import zipfile
@@ -39,4 +32,3 @@ print("Installing requirements...")
 cmd(path.expanduser("~") + "/Neonium-main/venv/Scripts/python.exe -m pip install -r " + path.expanduser("~") + "/Neonium-main/requirements.txt")
 
 print("Done! You can now run Neonium by running " + path.expanduser("~") + "/Neonium-main/venv/Scripts/python.exe " + path.expanduser("~") + "/Neonium-main/neonium.py")
-```
