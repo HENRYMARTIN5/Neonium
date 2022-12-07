@@ -4,8 +4,8 @@ import zipfile
 try:
   import requests
 except ImportError:
-  cmd(path.realpath(sys.executable) + " -m ensurepip")
-  cmd(path.realpath(sys.executable) + " -m pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org requests")
+  cmd("\"" + path.realpath(sys.executable) + "\" -m ensurepip")
+  cmd("\"" + path.realpath(sys.executable) + "\" -m pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org requests")
   import requests
 
 link = "http://github.com/HENRYMARTIN5/Neonium/archive/refs/heads/main.zip"
@@ -26,9 +26,9 @@ print("Cleaning up...")
 cmd("del " + file_name)
 
 print("Creating venv...")
-cmd(path.realpath(sys.executable) + " -m venv " + path.expanduser("~") + "/Neonium-main/venv")
+cmd("\"" + path.realpath(sys.executable) + "\" -m venv " + path.expanduser("~") + "/Neonium-main/venv")
 
 print("Installing requirements...")
-cmd(path.expanduser("~") + "/Neonium-main/venv/Scripts/python.exe -m pip install -r " + path.expanduser("~") + "/Neonium-main/requirements.txt")
+cmd(path.expanduser("~") + "/Neonium-main/venv/Scripts/python.exe -m pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org -r " + path.expanduser("~") + "/Neonium-main/requirements.txt")
 
 print("Done! You can now run Neonium by running " + path.expanduser("~") + "/Neonium-main/venv/Scripts/python.exe " + path.expanduser("~") + "/Neonium-main/neonium.py")
