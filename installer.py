@@ -5,10 +5,10 @@ try:
   import requests
 except ImportError:
   cmd(path.realpath(sys.executable) + " -m ensurepip")
-  cmd(path.realpath(sys.executable) + " -m pip install requests")
+  cmd(path.realpath(sys.executable) + " -m pip install --trusted-host pypi.org --trusted-host files.pythonhosted.org requests")
   import requests
 
-link = "https://github.com/HENRYMARTIN5/Neonium/archive/refs/heads/main.zip"
+link = "http://github.com/HENRYMARTIN5/Neonium/archive/refs/heads/main.zip"
 file_name = "neonium.zip"
 
 with open(file_name, "wb") as f:
